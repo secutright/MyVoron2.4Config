@@ -80,3 +80,18 @@ requirements = scripts/KlipperScreen-requirements.txt
 system_dependencies = scripts/system-dependencies.json
 managed_services = KlipperScreen
 
+[update_manager octoeverywhere]
+type = git_repo
+channel = beta
+path = /home/scott/octoeverywhere
+origin = https://github.com/QuinnDamerell/OctoPrint-OctoEverywhere.git
+env = /home/scott/octoeverywhere-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoeverywhere
+
+[announcements]
+subscriptions = 
+	octoeverywhere
+
