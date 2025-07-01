@@ -24,6 +24,10 @@ cors_domains =
 
 [history]
 
+[spoolman]
+server = http://192.168.20.246:7912
+sync_rate = 5
+
 [update_manager]
 channel = dev
 refresh_interval = 168
@@ -93,5 +97,34 @@ managed_services =
 
 [announcements]
 subscriptions = 
-	octoeverywhere
+	octoapp.
+
+[update_manager mobileraker]
+install_script = /home/scott/mobileraker_companion/scripts/install.sh
+requirements = /home/scott/mobileraker_companion/scripts/mobileraker-requirements.txt
+env = /home/scott/mobileraker-env/bin/python
+managed_services = mobileraker
+primary_branch = main
+origin = https://github.com/Clon1998/mobileraker_companion.git
+path = /home/scott/mobileraker_companion
+type = git_repo
+
+[update_manager octoapp]
+type = git_repo
+channel = beta
+path = /home/scott/octoapp
+origin = https://github.com/crysxd/OctoApp-Plugin.git
+env = /home/scott/octoapp-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	octoapp
+
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+system_dependencies = resources/system-dependencies.json
 
