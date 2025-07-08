@@ -32,6 +32,14 @@ sync_rate = 5
 channel = dev
 refresh_interval = 168
 
+[update_manager klipper-toolchanger]
+type = git_repo
+channel = dev
+path = ~/klipper-toolchanger
+origin = https://github.com/viesturz/klipper-toolchanger.git
+managed_services = klipper
+primary_branch = main
+
 [update_manager cartographer]
 type = git_repo
 path = ~/cartographer-klipper
